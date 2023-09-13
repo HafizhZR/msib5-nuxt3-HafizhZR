@@ -1,26 +1,25 @@
 <template>
-    <div>
-      <div class="bg-gradient-to-b from-[#D8EEFD] to-white w-full">
-        <Header />
-        <HomeJumbotron />
-      </div>
-      <div>
-        <HomeCategories />
-        <HomeFlashSale />
-        <HomeLatest />
-        <HomePromo />
-        <HomeLatest />
-        <HomeLatest />
-        <HomeForYou />
-        <NewsLetter />
-      </div>
-      <div>
-        <Footer />
-      </div>
+  <div>
+    <div class="bg-gradient-to-b from-[#D8EEFD] to-white w-full">
+      <HomeJumbotron />
     </div>
-  </template>
+    <div>
+      <HomeCategories />
+      <HomeFlashSale />
+      <HomeLatest />
+      <HomePromo />
+      <HomeLatest />
+      <HomeLatest />
+      <HomeForYou />
+      <NewsLetter />
+    </div>
+  </div>
+</template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
+definePageMeta({
+  layout: 'home',
+})
 
-  </script>
+</script>
   

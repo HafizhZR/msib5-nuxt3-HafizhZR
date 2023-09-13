@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col lg:flex-row lg:flex bg-[#101828] justify-center items-center lg:justify-between w-full px-7 lg:px-28 py-10 lg:py-10">
+  <div
+    class="flex flex-col lg:flex-row lg:flex bg-[#101828] justify-center items-center lg:justify-between w-full px-7 lg:px-28 py-10 lg:py-10">
     <div class="flex-col mb-8 lg:mb-0">
       <p class="text-white text-xl font-semibold text-center lg:text-left">
         Join our Newsletter

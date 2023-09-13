@@ -3,7 +3,7 @@
     <div class="flex justify-between">
       <div class="flex justify-center items-center">
         <p class="font-semibold text-2xl ml-14 mr-4">
-          {{kategori}}
+          {{ kategori }}
         </p>
       </div>
       <button class="text-[#0984DD] flex justify-center items-center gap-3 m-14 font-semibold text-lg">
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 defineProps({
-  kategori:String,
+  kategori: String,
 })
 
 </script>

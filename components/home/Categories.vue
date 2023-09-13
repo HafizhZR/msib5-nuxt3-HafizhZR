@@ -2,12 +2,12 @@
   <div class="flex flex-col items-center mx-auto">
     <div class="mb-10 w-full">
       <SubMenus :kategori="categori" />
-      <div class="grid grid-cols-2 mx-10 md:grid-cols-3 gap-8 lg:gap-0 lg:flex justify-center items-center lg:justify-around">
+      <div
+        class="grid grid-cols-2 mx-10 md:grid-cols-3 gap-8 lg:gap-0 lg:flex justify-center items-center lg:justify-around">
         <Card v-for="(kategori, index) in categories" :key="index" :imageUrl="kategori.imageUrl" :name="kategori.name" />
       </div>
     </div>
   </div>
-
 </template>
   
 <script setup lang="ts">

@@ -1,44 +1,54 @@
 <template>
   <div>
     <div class="bg-gradient-to-b from-[#D8EEFD] to-white w-full">
-      <Header />
-      <div class="flex justify-center items-center mx-32 my-10">
-        <button
-          class="absolute left-32 border w-[90px] h-[40px] flex items-center justify-center font-semibold bg-white rounded-lg"><span
-            class="material-symbols-outlined">
-            arrow_back
-          </span>Back</button>
+      <div class="flex justify-center items-center mx-auto py-10">
+        <NuxtLink to="/product" class="items-center hidden sm:flex md:flex lg:flex xl:flex"><button
+            class="absolute left-32 sm:left-16 md:left-16 lg:left-16 xl:left-32 border w-[90px] h-[40px] flex items-center justify-center font-semibold bg-white rounded-lg"><span
+              class="material-symbols-outlined">
+              arrow_back
+            </span>Back</button></NuxtLink>
         <h1 class="text-center text-[40px] leading-[56px] font-semibold tracking-[-0.8px] text-[#101828] my-10">
           Product Detail</h1>
-        <button
-          class="absolute right-32 border w-[120px] h-[40px] flex justify-center items-center font-semibold bg-[#0984DD] text-white rounded-lg"><span
-            class="material-symbols-outlined">
-            add
-          </span>Add to Cart</button>
+        <NuxtLink to="/checkout" class="items-center hidden sm:flex md:flex lg:flex xl:flex">
+          <button
+            class="absolute right-32 sm:right-16 md:right-16 lg:right-16 xl:right-32 border w-[120px] h-[40px] flex justify-center items-center font-semibold bg-[#0984DD] text-white rounded-lg"><span
+              class="material-symbols-outlined">
+              add
+            </span>Add to Cart</button>
+        </NuxtLink>
       </div>
     </div>
-    <div class="flex mx-20 mb-20">
-      <div class="flex flex-col w-1/2 justify-center items-center gap-3">
-        <div class="flex justify-center items-center bg-gray-100 rounded-lg w-[555px] h-[430px]">
+    <div class="flex mx-2 lg:mx-20 mb-20 flex-col xl:flex-row">
+      <div class="mb-10 flex flex-col xl:hidden mx-auto">
+        <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">Sprite Nyatanya Nyegerin</h1>
+        <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ 14.50</p>
+      </div>
+      <div class="flex flex-col w-full xl:w-1/2 justify-center items-center gap-3">
+        <div
+          class="flex justify-center items-center bg-gray-100 rounded-lg w-[355px] sm:w-[555px] xl:w-[555px] h-60 sm:h-[400px] xl:h-[430px] mx-auto">
           <img class="" src="../../assets/images/Bottle.png" alt="">
         </div>
         <div class="justify-center items-center flex">
           <div class="flex gap-3">
-            <img class="w-[130px] h-[130px] bg-gray-100 rounded-lg" src="../../assets/images/Bottle.png" alt="">
-            <img class="w-[130px] h-[130px] bg-gray-100 rounded-lg" src="../../assets/images/Bottle.png" alt="">
-            <img class="w-[130px] h-[130px] bg-gray-100 rounded-lg" src="../../assets/images/Bottle.png" alt="">
-            <img class="w-[130px] h-[130px] bg-gray-100 rounded-lg" src="../../assets/images/Bottle.png" alt="">
+            <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
+              src="../../assets/images/Bottle.png" alt="">
+            <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
+              src="../../assets/images/Bottle.png" alt="">
+            <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
+              src="../../assets/images/Bottle.png" alt="">
+            <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
+              src="../../assets/images/Bottle.png" alt="">
           </div>
         </div>
       </div>
-      <div class="w-1/2">
-        <div class="mb-10">
+      <div class="w-full xl:w-1/2 flex flex-col">
+        <div class="mb-10 hidden xl:flex xl:flex-col">
           <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">Sprite Nyatanya Nyegerin</h1>
           <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ 14.50</p>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 mt-10 xl:mt-0 flex flex-col mx-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Color</p>
-          <div class="flex w-[75%]">
+          <div class="flex w-full xl:w-[75%] gap-3">
             <div class="w-1/3 flex">
               <div class="bg-[#F95016] w-[30px] h-[30px] rounded-full mr-2"></div>
               <p class="flex justify-center items-center">Color Name</p>
@@ -53,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 flex flex-col mr-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Size</p>
           <div class="flex gap-3">
             <div>
@@ -70,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 flex flex-col mr-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Quantity</p>
           <div class="flex gap-3">
             <button class="w-[40px] h-[40px] bg-[#EAECF0] rounded-lg font-2xl">
@@ -83,7 +93,7 @@
             </button>
           </div>
         </div>
-        <div>
+        <div class="flex flex-col xl:mx-0 mx-2 sm:mx-12">
           <p class="mb-2 text-[#667085]">
             Description
           </p>
@@ -96,6 +106,20 @@
         </div>
       </div>
     </div>
-    <Footer />
+    <div class="relative">
+      <NuxtLink to="/checkout" class="items-center fixed top-[625px] right-[-100px] flex sm:hidden lg:hidden xl:hidden">
+        <button
+          class="absolute right-32 border w-[120px] h-[40px] flex justify-center items-center font-semibold bg-[#0984DD] text-white rounded-lg"><span
+            class="material-symbols-outlined">
+            add
+          </span>Add to Cart</button>
+      </NuxtLink>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'user',
+})
+</script>

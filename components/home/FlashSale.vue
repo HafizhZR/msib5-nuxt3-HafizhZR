@@ -20,9 +20,9 @@
       class="relative grid grid-cols-2 justify-center items-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:flex xl:justify-around mx-2 gap-2 xl:gap-6 xl:mx-16">
       <Card class="mb-8" v-for="(data, index) in flashSale" :key="index" :imageUrl="data.imageUrl" :label="data.label"
         :judul="data.judul" :harga="data.harga" :hargaAsli="data.hargaAsli" :diskon="data.diskon" />
-        <button class="absolute right-[-40px] top-[170px] hidden xl:inline-block">
-          <img src="../../assets/icons/Next.png" alt="">
-        </button>
+      <button class="absolute right-[-40px] top-[170px] hidden xl:inline-block">
+        <img src="../../assets/icons/Next.png" alt="">
+      </button>
     </div>
   </div>
 </template>

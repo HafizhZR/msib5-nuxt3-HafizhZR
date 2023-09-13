@@ -21,24 +21,29 @@
       </span>
     </button>
 
-    <div class="lg:hidden mt-3 flex flex-col"
+    <div class="lg:hidden mt-3 z-10 flex flex-col"
       :class="{ 'absolute right-10 top-12 bg-[#ffffff] p-3 rounded-lg': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }">
-      <NuxtLink to="/product" class="flex mb-3 justify-center">
-        <button class="block mb-2">Home</button>
+      <NuxtLink to="/" class="flex mb-3 justify-center">
+        <button class="flex mb-3 justify-center">Home</button>
       </NuxtLink>
       <NuxtLink to="/product" class="flex mb-3 justify-center">
-        <button class="mb-2 flex">Products<span class="material-symbols-outlined">expand_more</span></button>
+        <button class="flex mb-3 justify-center">Products<span
+            class="material-symbols-outlined">expand_more</span></button>
       </NuxtLink>
       <button class="flex mb-3 justify-center">Categories<span
           class="material-symbols-outlined">expand_more</span></button>
-      <button class="flex mb-3 justify-center">Log in</button>
-      <button class="flex mb-3 justify-center">Sign up</button>
+      <NuxtLink to="/checkout" class="flex mb-3 justify-center">
+        <button><img src="../assets/icons/Cart.png" alt="Cart"></button>
+      </NuxtLink>
+
+      <button class="flex mb-3 justify-center"><img src="../assets/icons/Avatar.png" alt="User"></button>
     </div>
 
     <div class="hidden lg:flex gap-x-3">
-      <button class="px-5 py-1 hover:bg-white rounded-lg font-semibold text-[#475467]">Log in</button>
-      <button class="bg-[#0984DD] px-[18px] py-[10px] rounded-lg text-[#f8feff] font-semibold hover:bg-sky-700">Sign
-        up</button>
+      <NuxtLink to="/checkout">
+        <button class="px-5 py-3 "><img src="../assets/icons/Cart.png" alt="Cart"></button>
+      </NuxtLink>
+      <button class="bpx-5 py-1"><img src="../assets/icons/Avatar.png" alt="User"></button>
     </div>
   </div>
 </template>
