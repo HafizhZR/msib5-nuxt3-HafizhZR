@@ -20,31 +20,32 @@
     </div>
     <div class="flex mx-2 lg:mx-20 mb-20 flex-col xl:flex-row">
       <div class="mb-10 flex flex-col xl:hidden mx-auto">
-        <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">Sprite Nyatanya Nyegerin</h1>
-        <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ 14.50</p>
+        <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">{{ productStore.detail.title }}</h1>
+        <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ {{ productStore.detail.price }}</p>
       </div>
       <div class="flex flex-col w-full xl:w-1/2 justify-center items-center gap-3">
         <div
           class="flex justify-center items-center bg-gray-100 rounded-lg w-[355px] sm:w-[555px] xl:w-[555px] h-60 sm:h-[400px] xl:h-[430px] mx-auto">
-          <img class="" src="../../assets/images/Bottle.png" alt="">
+          <img class="w-[355px] sm:w-[555px] xl:w-[400px] h-60 sm:h-[400px] xl:h-[430px]" :src="productStore.detail.image"
+            alt="">
         </div>
         <div class="justify-center items-center flex">
           <div class="flex gap-3">
             <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
-              src="../../assets/images/Bottle.png" alt="">
+              :src="productStore.detail.image" alt="">
             <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
-              src="../../assets/images/Bottle.png" alt="">
+              :src="productStore.detail.image" alt="">
             <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
-              src="../../assets/images/Bottle.png" alt="">
+              :src="productStore.detail.image" alt="">
             <img class="w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] xl:w-[130px] xl:h-[130px] bg-gray-100 rounded-lg"
-              src="../../assets/images/Bottle.png" alt="">
+              :src="productStore.detail.image" alt="">
           </div>
         </div>
       </div>
       <div class="w-full xl:w-1/2 flex flex-col">
         <div class="mb-10 hidden xl:flex xl:flex-col">
-          <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">Sprite Nyatanya Nyegerin</h1>
-          <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ 14.50</p>
+          <h1 class="text-[#101828] text-3xl font-semibold leading-[38px] mb-2">{{ productStore.detail.title }}</h1>
+          <p class="text-[#0764A7] text-2xl font-semibold leading-[32px]">$ {{ productStore.detail.price }}</p>
         </div>
         <div class="mb-10 mt-10 xl:mt-0 flex flex-col mx-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Color</p>
@@ -98,10 +99,7 @@
             Description
           </p>
           <p class="font-[20px] font-semibold leading-[30px] text-[#262262]">
-            Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
-            aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur
-            neque.
+            {{ productStore.detail.description }}
           </p>
         </div>
       </div>
@@ -119,6 +117,14 @@
 </template>
 
 <script setup lang="ts">
+import { useProductStore } from '../../store/index';
+
+const idString = useRoute().params.id;
+const id = +idString;
+
+const productStore = useProductStore();
+await productStore.detailProduct(id);
+
 definePageMeta({
   layout: 'user',
 })

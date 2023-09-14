@@ -18,8 +18,9 @@
     </div>
     <div
       class="relative grid grid-cols-2 justify-center items-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:flex xl:justify-around mx-2 gap-2 xl:gap-6 xl:mx-16">
-      <Card class="mb-8" v-for="(data, index) in flashSale" :key="index" :imageUrl="data.imageUrl" :label="data.label"
-        :judul="data.judul" :harga="data.harga" :hargaAsli="data.hargaAsli" :diskon="data.diskon" />
+      <div v-for="product in productStore.getFlashSaleProducts">
+        <CardProduct class="mb-8" :products="product" :key="product.id" />
+      </div>
       <button class="absolute right-[-40px] top-[170px] hidden xl:inline-block">
         <img src="../../assets/icons/Next.png" alt="">
       </button>
@@ -28,52 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import Card from '../../components/CardProduct.vue'
-import Bottle from '../../assets/images/Bottle.png'
-import Sepatu from '../../assets/images/Sepatu.png'
 
-const flashSale = ref([
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Sepatu,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
+import { useProductStore } from '../../store/index';
 
-])
+const productStore = useProductStore();
+
+await productStore.fetchProducts();
+await productStore.getFlashSaleProducts;
+
 </script>

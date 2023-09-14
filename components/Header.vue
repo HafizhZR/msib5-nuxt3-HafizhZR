@@ -23,7 +23,7 @@
 
     <div class="lg:hidden mt-3 flex flex-col"
       :class="{ 'absolute right-10 top-12 bg-[#ffffff] p-3 rounded-lg': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }">
-      <NuxtLink to="/product" class="flex mb-3 justify-center">
+      <NuxtLink to="/" class="flex mb-3 justify-center">
         <button class="block mb-2">Home</button>
       </NuxtLink>
       <NuxtLink to="/product" class="flex mb-3 justify-center">

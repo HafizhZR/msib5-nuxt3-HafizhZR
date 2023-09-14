@@ -7,9 +7,11 @@
             <p class="text-[#101828] font-semibold text-xl">Thank you!</p>
             <p class="text-[#98A2B3]">Your order will be processed immediately.</p>
           </div>
-          <button
-            class="bg-[#0984DD] text-white py-2 px-4 rounded-lg flex justify-center items-center gap-2 font-semibold"><img
-              src="../../assets/icons/Home.png" alt="">Back to Home</button>
+          <NuxtLink to="/">
+            <button
+              class="bg-[#0984DD] text-white py-2 px-4 rounded-lg flex justify-center items-center gap-2 font-semibold"><img
+                src="../../assets/icons/Home.png" alt="">Back to Home</button>
+          </NuxtLink>
         </div>
       </div>
     </div>

@@ -6,146 +6,27 @@
       <SearchList />
     </div>
     <div class="mb-20 flex flex-col justify-center items-center mx-auto">
-      <NuxtLink to="/product/:id">
+      <div
+        class="grid justify-center items-center grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 lg:grid-cols-4 xl:grid-cols-5 xl:gap-6 xl:mx-16 mx-2">
         <div
-          class="grid justify-center items-center grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 lg:grid-cols-4 xl:grid-cols-5 xl:gap-6 xl:mx-16 mx-2">
-          <Card v-for="(data, index) in ProductList" :key="index" :imageUrl="data.imageUrl" :label="data.label"
-            :judul="data.judul" :harga="data.harga" :hargaAsli="data.hargaAsli" :diskon="data.diskon" />
+          v-for="product in productStore.products">
+          <NuxtLink :to="`/product/${product.id}`">
+            <CardProduct :products="product" :key="product.id" />
+          </NuxtLink>
         </div>
-      </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import Card from '../../components/CardProduct.vue'
-import Bottle from '../../assets/images/Bottle.png'
+import { useProductStore } from '../../store/index';
+
+const productStore = useProductStore();
+
+await productStore.fetchProducts();
 
 definePageMeta({
   layout: 'user',
-})
-
-const ProductList = ref([
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-  {
-    imageUrl: Bottle,
-    label: 'Label',
-    judul: 'UX review presentations',
-    harga: 36000,
-    hargaAsli: 40000,
-    diskon: 10,
-  },
-])
+});
 </script>
