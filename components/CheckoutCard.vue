@@ -1,8 +1,14 @@
 <template>
   <div>
-    <div class="flex flex-col xl:flex-row gap-5 border rounded-lg border-[#EAECF0] w-[200px] xl:w-[800px] mx-auto">
+    <div
+      class="flex flex-col xl:flex-row gap-5 border rounded-lg border-[#EAECF0] w-[200px] xl:w-[800px] mx-auto"
+    >
       <div class="w-[200px] h-[160px] xl:w-[300px] xl:h-[160px]">
-        <img class="bg-[#F2F4F7] w-[200px] h-[160px] xl:w-[300px] xl:h-[160px]" src="../assets/images/Bottle.png" alt="">
+        <img
+          class="bg-[#F2F4F7] w-[200px] h-[160px] xl:w-[300px] xl:h-[160px]"
+          src="../assets/images/Bottle.png"
+          alt=""
+        />
       </div>
       <div class="flex flex-col justify-between">
         <div class="flex flex-col xl:flex-row">
@@ -16,8 +22,9 @@
         </div>
         <div class="flex justify-between my-4 mx-2">
           <p>Qty: {{ quantity }}</p>
-          <button class="text-[#B42318] flex justify-center items-center gap-2"><img src="../assets/icons/Trash.png"
-              alt="">Remove</button>
+          <button class="text-[#B42318] flex justify-center items-center gap-2">
+            <img src="../assets/icons/Trash.png" alt="" />Remove
+          </button>
         </div>
       </div>
     </div>
@@ -30,6 +37,5 @@ const { name, colorName, price, quantity } = defineProps({
   colorName: String,
   price: Number,
   quantity: Number
-});
-
+})
 </script>

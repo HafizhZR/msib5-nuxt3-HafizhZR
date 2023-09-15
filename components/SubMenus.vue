@@ -6,9 +6,11 @@
           {{ kategori }}
         </p>
       </div>
-      <button class="text-[#0984DD] flex justify-center items-center gap-3 m-14 font-semibold text-lg">
+      <button
+        class="text-[#0984DD] flex justify-center items-center gap-3 m-14 font-semibold text-lg"
+      >
         View all
-        <img src="../assets/icons/Arrow.png" alt="">
+        <img src="../assets/icons/Arrow.png" alt="" />
       </button>
     </div>
   </div>
@@ -16,7 +18,6 @@
 
 <script setup lang="ts">
 defineProps({
-  kategori: String,
+  kategori: String
 })
-
 </script>
