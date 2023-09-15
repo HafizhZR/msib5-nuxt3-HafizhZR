@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col mx-auto w-full">
+    <div class="flex flex-col mx-auto w-full h-screen">
         <div class="bg-gradient-to-b from-[#D8EEFD] to-white w-full">
             <h1 class="text-center text-[40px] leading-[56px] font-semibold tracking-[-0.8px] text-[#101828] py-10">
                 Shopping Cart</h1>
@@ -29,6 +29,9 @@
 </template>
 
 <script setup lang="ts">
+import { useProductStore } from '../../store/index';
+
+const productStore = useProductStore();
 
 definePageMeta({
     layout: 'user',
@@ -40,23 +43,6 @@ const checkout = ref([{
     price: 36000,
     quantity: 1,
 },
-{
-    name: 'UX review presentations',
-    colorName: 'red',
-    price: 36000,
-    quantity: 1,
-},
-{
-    name: 'UX review presentations',
-    colorName: 'red',
-    price: 36000,
-    quantity: 1,
-},
-{
-    name: 'UX review presentations',
-    colorName: 'red',
-    price: 36000,
-    quantity: 1,
-}])
+])
 
 </script>

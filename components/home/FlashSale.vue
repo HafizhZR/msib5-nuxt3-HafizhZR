@@ -19,7 +19,9 @@
     <div
       class="relative grid grid-cols-2 justify-center items-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:flex xl:justify-around mx-2 gap-2 xl:gap-6 xl:mx-16">
       <div v-for="product in productStore.getFlashSaleProducts">
-        <CardProduct class="mb-8" :products="product" :key="product.id" />
+        <NuxtLink :to="`/product/${product.id}`">
+          <CardProduct class="mb-8" :products="product" :key="product.id" />
+        </NuxtLink>
       </div>
       <button class="absolute right-[-40px] top-[170px] hidden xl:inline-block">
         <img src="../../assets/icons/Next.png" alt="">

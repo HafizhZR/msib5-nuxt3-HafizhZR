@@ -25,7 +25,9 @@
         <div
           class="relative xl:z-[1] xl:mt-[-15px] xl:flex grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 lg:flex-row justify-center items-center xl:gap-6 xl:ml-[-130px] mx-[-6px] md:mx-4 ">
           <div v-for="product in productStore.getLatestProducts">
-            <CardProduct class="mb-7" :products="product" :key="product.id" />
+            <NuxtLink :to="`/product/${product.id}`">
+              <CardProduct class="mb-7" :products="product" :key="product.id" />
+            </NuxtLink>
           </div>
           <button class="absolute right-[-40px] top-[170px] hidden xl:inline-block">
             <img src="../../assets/icons/Next.png" alt="">

@@ -10,7 +10,7 @@
         <h1 class="text-center text-[40px] leading-[56px] font-semibold tracking-[-0.8px] text-[#101828] my-10">
           Product Detail</h1>
         <NuxtLink to="/checkout" class="items-center hidden sm:flex md:flex lg:flex xl:flex">
-          <button
+          <button 
             class="absolute right-32 sm:right-16 md:right-16 lg:right-16 xl:right-32 border w-[120px] h-[40px] flex justify-center items-center font-semibold bg-[#0984DD] text-white rounded-lg"><span
               class="material-symbols-outlined">
               add
@@ -26,7 +26,7 @@
       <div class="flex flex-col w-full xl:w-1/2 justify-center items-center gap-3">
         <div
           class="flex justify-center items-center bg-gray-100 rounded-lg w-[355px] sm:w-[555px] xl:w-[555px] h-60 sm:h-[400px] xl:h-[430px] mx-auto">
-          <img class="w-[355px] sm:w-[555px] xl:w-[400px] h-60 sm:h-[400px] xl:h-[430px]" :src="productStore.detail.image"
+          <img class="w-[255px] h-[255px] sm:w-[400px] sm:h-[400px] xl:w-[400px] xl:h-[430px]" :src="productStore.detail.image"
             alt="">
         </div>
         <div class="justify-center items-center flex">
@@ -50,35 +50,35 @@
         <div class="mb-10 mt-10 xl:mt-0 flex flex-col mx-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Color</p>
           <div class="flex w-full xl:w-[75%] gap-3">
-            <div class="w-1/3 flex">
+            <button class="w-1/3 flex border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 px-2 py-2 font-semibold rounded-lg">
               <div class="bg-[#F95016] w-[30px] h-[30px] rounded-full mr-2"></div>
-              <p class="flex justify-center items-center">Color Name</p>
-            </div>
-            <div class="w-1/3 flex">
+              <p class="flex justify-center items-center py-1">Orange</p>
+            </button>
+            <button class="w-1/3 flex border focus:border-[#28A0F6] border-solid focus:border-2 px-2 py-2 font-semibold rounded-lg">
               <div class="bg-[#27AE60] w-[30px] h-[30px] rounded-full mr-2"></div>
-              <p class="flex justify-center items-center">Color Name</p>
-            </div>
-            <div class="w-1/3 flex">
+              <p class="flex justify-center items-center py-1">Green</p>
+            </button>
+            <button class="w-1/3 flex border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 px-2 py-2 font-semibold rounded-lg">
               <div class="bg-[#6172F3] w-[30px] h-[30px] rounded-full mr-2"></div>
-              <p class="flex justify-center items-center">Color Name</p>
-            </div>
+              <p class="flex justify-center items-center py-1">Purple</p>
+            </button>
           </div>
         </div>
         <div class="mb-10 flex flex-col mr-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Size</p>
           <div class="flex gap-3">
-            <div>
+            <button class="border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 font-semibold rounded-lg">
               <div class="bg-[#F9FAFB] w-[40px] h-[40px] flex justify-center items-center rounded-lg">S</div>
-            </div>
-            <div>
+            </button>
+            <button class="border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 font-semibold rounded-lg">
               <div class="bg-[#EAECF0] w-[40px] h-[40px] flex justify-center items-center rounded-lg">M</div>
-            </div>
-            <div>
+            </button>
+            <button class="border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 font-semibold rounded-lg">
               <div class="bg-[#F9FAFB] w-[40px] h-[40px] flex justify-center items-center rounded-lg">L</div>
-            </div>
-            <div>
+            </button>
+            <button class="border bg-[#EAECF0] focus:border-[#28A0F6] border-solid focus:border-2 font-semibold rounded-lg">
               <div class="bg-[#EAECF0] w-[40px] h-[40px] flex justify-center items-center rounded-lg">XL</div>
-            </div>
+            </button>
           </div>
         </div>
         <div class="mb-10 flex flex-col mr-auto xl:mx-0 ml-2 sm:ml-12">
@@ -106,7 +106,7 @@
     </div>
     <div class="relative">
       <NuxtLink to="/checkout" class="items-center fixed top-[625px] right-[-100px] flex sm:hidden lg:hidden xl:hidden">
-        <button
+        <button 
           class="absolute right-32 border w-[120px] h-[40px] flex justify-center items-center font-semibold bg-[#0984DD] text-white rounded-lg"><span
             class="material-symbols-outlined">
             add
@@ -128,4 +128,5 @@ await productStore.detailProduct(id);
 definePageMeta({
   layout: 'user',
 })
+
 </script>

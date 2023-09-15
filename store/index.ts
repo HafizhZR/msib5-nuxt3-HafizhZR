@@ -5,13 +5,23 @@ export type TProduct = {
   title: string;
   price: number;
   category?: string;
-  description?: string;
+  description: string;
+  image: string;
+};
+
+export type TCart = {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  color: string;
   image: string;
 };
 
 type ProductState = {
   products: TProduct[];
   detail: TProduct;
+  cart: TCart;
 };
 
 export const useProductStore = defineStore("product", {
@@ -21,7 +31,17 @@ export const useProductStore = defineStore("product", {
       id: 0,
       title: "",
       price: 0,
-      image: ""
+      image: "",
+      category: "",
+      description: ""
+    },
+    cart: {
+      id: 0,
+      title: "",
+      price: 0,
+      quantity: 0,
+      color: "",
+      image: "",
     },
   }),
 
@@ -31,7 +51,7 @@ export const useProductStore = defineStore("product", {
     },
     getFlashSaleProducts(): TProduct[] {
       return this.products.slice(0, 5);
-    }
+    },
   },
 
   actions: {
@@ -53,13 +73,5 @@ export const useProductStore = defineStore("product", {
         throw error;
       }
     },
-
-    async addToCart(product: TProduct) {
-      try {
-        const { data } = await useNuxtApp().$axios.post("/cart", product);
-      } catch (error) {
-        
-      }
-    }
   },
 });
