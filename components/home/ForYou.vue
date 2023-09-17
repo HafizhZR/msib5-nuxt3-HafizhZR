@@ -13,7 +13,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useProductStore } from '../../store/index'
+import { useProductStore } from '../../store/product.store'
 import SubMenus from '../SubMenus.vue'
 
 const kategoriForYou = 'For You'

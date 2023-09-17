@@ -1,17 +1,19 @@
 <template>
   <div class="relative flex mx-auto justify-center mb-16">
     <form
-      action="Search"
+      action="products"
       class="flex gap-2 flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row"
     >
       <div class="absolute flex top-3 pl-2">
         <Icon name="uil:search" color="gray" size="24" />
       </div>
       <input
+        v-model="sort"
         type="text"
-        name="Search List"
+        name="sort"
         placeholder="Search"
         class="w-[350px] h-[48px] sm:w-[450px] xl:w-[612px] xl:h-[48px] border py-2 pl-10 bg-white rounded-lg"
+        @keyup.enter="productStore.sortProducts(sort)"
       />
       <div class="flex mx-auto">
         <button
@@ -26,4 +28,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useProductStore } from '~/store/product.store'
+const productStore = useProductStore()
+const sort = ref('')
+</script>

@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { useProductStore } from '../../store/index'
+import { useProductStore } from '../../store/product.store'
 
 const productStore = useProductStore()
 

@@ -3,8 +3,8 @@
     <div class="bg-gradient-to-b from-[#D8EEFD] to-white w-full">
       <div class="flex justify-center items-center mx-auto py-10">
         <NuxtLink
-          to="/product"
           class="items-center hidden sm:flex md:flex lg:flex xl:flex"
+          @click="goBack"
           ><button
             class="absolute left-32 sm:left-16 md:left-16 lg:left-16 xl:left-32 border w-[90px] h-[40px] flex items-center justify-center font-semibold bg-white rounded-lg"
           >
@@ -158,17 +158,20 @@
         <div class="mb-10 flex flex-col mr-auto xl:mx-0 ml-2 sm:ml-12">
           <p class="mb-2 text-[#667085]">Quantity</p>
           <div class="flex gap-3">
-            <button class="w-[40px] h-[40px] bg-[#EAECF0] rounded-lg font-2xl">
+            <button
+              class="w-[40px] h-[40px] bg-[#EAECF0] rounded-lg font-xl"
+              @click="decrement"
+            >
               -
             </button>
             <input
-              type="number"
-              name="Quantity"
-              placeholder="0"
+              :v-model="quantity"
+              :value="quantity"
               class="text-center w-[40px] h-[40px] bg-[#fff] border rounded-lg"
             />
             <button
               class="w-[40px] h-[40px] bg-[#0984DD] rounded-lg text-[#fff] font-2xl"
+              @click="increment"
             >
               +
             </button>
@@ -198,13 +201,29 @@
 </template>
 
 <script setup lang="ts">
-import { useProductStore } from '../../store/index'
+import { useProductStore } from '../../store/product.store'
 
+const router = useRouter()
 const idString = useRoute().params.id
 const id = +idString
+const quantity = ref(1)
 
 const productStore = useProductStore()
 await productStore.detailProduct(id)
+
+const increment = () => {
+  quantity.value++
+}
+
+const decrement = () => {
+  if (quantity.value > 1) {
+    quantity.value--
+  }
+}
+
+const goBack = () => {
+  router.go(-1)
+}
 
 definePageMeta({
   layout: 'user'

@@ -1,48 +1,25 @@
 import { defineStore } from 'pinia'
+import { useNuxtApp } from '#app'
 
 export type TProduct = {
   id: number
   title: string
   price: number
-  category?: string
+  category: string
   description: string
   image: string
+  qty: number
 }
 
-export type TCart = {
-  id: number
-  title: string
-  price: number
-  quantity: number
-  color: string
-  image: string
-}
-
-type ProductState = {
+type TProductState = {
   products: TProduct[]
   detail: TProduct
-  cart: TCart
 }
 
 export const useProductStore = defineStore('product', {
-  state: (): ProductState => ({
+  state: (): TProductState => ({
     products: [],
-    detail: {
-      id: 0,
-      title: '',
-      price: 0,
-      image: '',
-      category: '',
-      description: ''
-    },
-    cart: {
-      id: 0,
-      title: '',
-      price: 0,
-      quantity: 0,
-      color: '',
-      image: ''
-    }
+    detail: {} as TProduct
   }),
 
   getters: {
@@ -73,15 +50,13 @@ export const useProductStore = defineStore('product', {
         throw error
       }
     },
-
-    async fetchCarts() {
+    async sortProducts(sort: string) {
       try {
-        const { data } = await useNuxtApp().$axios.get('/carts')
-        this.cart = data
+        const { data } = await useNuxtApp().$axios.get(`/products?sort=${sort}`)
+        this.products = data
         console.log(data)
-      } catch (error) {
-        console.error('Error fetching cart data:', error)
-      }
+      } catch (error) {}
+      console.error('Error fetching sort product:', Error)
     }
   }
 })
